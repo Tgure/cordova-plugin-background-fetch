@@ -101,6 +101,13 @@
     }
 }
 
+-(void) stop:(CDVInvokedUrlCommand*)command
+{
+  NSLog(@"- stopping background-fetch");
+  UIApplication *app = [UIApplication sharedApplication];
+  [app setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalNever];
+}
+
 /**
  * Termination. Checks to see if it should turn off
  */
